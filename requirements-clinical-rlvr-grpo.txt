@@ -1,0 +1,8 @@
+# Install this on AutoDL when running train/grpo_rlvr.py.
+# The original HuatuoGPT-o1 PPO script pins trl==0.13.0, so GRPO uses a
+# separate requirements file to avoid silently breaking the paper baseline.
+trl>=0.17.0
+datasets>=3.1.0
+peft>=0.13.2
+bitsandbytes>=0.44.1
+pyyaml>=6.0.2

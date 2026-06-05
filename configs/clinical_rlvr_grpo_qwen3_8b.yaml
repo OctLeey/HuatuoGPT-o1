@@ -1,0 +1,45 @@
+model_name_or_path: Qwen/Qwen3-8B
+train_file: output_data/clinical_rlvr_demo/rlvr.json
+output_dir: ckpts/clinical_rlvr_grpo_qwen3_8b
+run_name: clinical_rlvr_grpo_qwen3_8b
+
+max_prompt_length: 2048
+max_completion_length: 1024
+num_generations: 4
+per_device_train_batch_size: 1
+gradient_accumulation_steps: 8
+learning_rate: 0.0000005
+beta: 0.04
+num_train_epochs: 1
+max_steps: -1
+temperature: 0.9
+
+use_peft: true
+use_4bit: true
+bnb_4bit_quant_type: nf4
+bnb_4bit_compute_dtype: bfloat16
+bf16: true
+gradient_checkpointing: true
+
+lora_r: 16
+lora_alpha: 32
+lora_dropout: 0.05
+lora_target_modules:
+  - q_proj
+  - k_proj
+  - v_proj
+  - o_proj
+  - gate_proj
+  - up_proj
+  - down_proj
+
+answer_reward_weight: 1.0
+format_reward_weight: 0.2
+entity_reward_weight: 0.3
+length_penalty_weight: -0.1
+
+logging_steps: 5
+save_steps: 50
+save_total_limit: 2
+seed: 42
+report_to: none

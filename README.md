@@ -1,4 +1,7 @@
 # HuatuoGPT-o1, Towards Medical Complex Reasoning with LLMs
+
+> Clinical-RLVR secondary development notes: see [README_CLINICAL_RLVR.md](README_CLINICAL_RLVR.md).
+
 <div align="center">
 <h3>
   HuatuoGPT-o1

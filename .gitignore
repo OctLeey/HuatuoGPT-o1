@@ -1,0 +1,6 @@
+output_data/
+ckpts/
+train_logs/
+wandb/
+*.log
+__pycache__/
